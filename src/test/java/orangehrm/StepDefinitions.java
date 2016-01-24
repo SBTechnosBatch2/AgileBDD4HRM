@@ -16,12 +16,14 @@ import java.util.concurrent.TimeUnit;
  * Created by User on 24/01/2016.
  */
 public class StepDefinitions {
-
+    //instantiate webdriver object
     WebDriver driver;
+
 
     @Before
     public void startBrowser()
     {
+        //creating firefox webdriver object
         driver=new FirefoxDriver();
         driver.get("http://insoft5.trial412.orangehrmlive.com/");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -32,6 +34,7 @@ public class StepDefinitions {
     @After
     public void stopBrowser()
     {
+        //killing driver object
         driver.quit();
     }
     @Given("^Admin is on login page$")
